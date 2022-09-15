@@ -18,9 +18,16 @@ public class ModFile {
 
         public ItemGroup getItemGroup() {
             return switch (item_settings.item_group) {
-                case Combat -> ItemGroup.COMBAT;
+                case BuildingBlocks -> ItemGroup.BUILDING_BLOCKS;
                 case Decorations -> ItemGroup.DECORATIONS;
+                case Redstone -> ItemGroup.REDSTONE;
+                case Transportation -> ItemGroup.TRANSPORTATION;
+                case Misc -> ItemGroup.MISC;
                 case Search -> ItemGroup.SEARCH;
+                case Food -> ItemGroup.FOOD;
+                case Tools -> ItemGroup.TOOLS;
+                case Combat -> ItemGroup.COMBAT;
+                case Materials -> ItemGroup.MATERIALS;
             };
         }
 
@@ -28,9 +35,16 @@ public class ModFile {
             ItemGroup item_group;
 
             enum ItemGroup {
-                Combat,
+                BuildingBlocks,
                 Decorations,
-                Search
+                Redstone,
+                Transportation,
+                Misc,
+                Search,
+                Food,
+                Tools,
+                Combat,
+                Materials,
             }
         }
     }
