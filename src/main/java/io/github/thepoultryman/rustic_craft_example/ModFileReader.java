@@ -10,13 +10,12 @@ public class ModFileReader {
     public ModFile readModFile(String modId) {
         Gson gson = new Gson();
         RusticCraftExample.LOGGER.info("Reading mod data file.");
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("assets/" + "rustic-craft-test-mod" + ".json");
-        BufferedReader reader = null;
+        RusticCraftExample.LOGGER.info(modId);
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("assets/" + modId + ".json");
+        BufferedReader reader;
         if (inputStream != null) {
-            RusticCraftExample.LOGGER.info("fff");
             reader = new BufferedReader(new InputStreamReader(inputStream));
         } else {
-            RusticCraftExample.LOGGER.info("ggg");
             return null;
         }
         ModFile modFile = gson.fromJson(reader, ModFile.class);
