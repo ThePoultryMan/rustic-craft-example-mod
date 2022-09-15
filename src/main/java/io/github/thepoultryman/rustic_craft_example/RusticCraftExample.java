@@ -9,7 +9,10 @@ public class RusticCraftExample implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Rustic Craft Example Mod");
 
 	@Override
-	public void onInitialize(ModContainer mod) {
+	public void onInitialize(ModContainer modContainer) {
 		LOGGER.info("The Rustic Craft Example mod is initializing.");
+        ModFileReader modFileReader = new ModFileReader();
+
+        ModFile mod = modFileReader.readModFile(modContainer.metadata().id());
 	}
 }
